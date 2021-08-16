@@ -12,6 +12,11 @@
 
 //b. faz uma spread, que é a cópia inteira de um objeto
 
+// Exercício 3
+//a. False
+//b. Undefined porque não tem a propriedade altura.
+
+
 // Exercícios de escrita de código 
 
 // Exercício 1
