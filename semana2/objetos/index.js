@@ -16,43 +16,75 @@
 
 // Exercício 1
 //a.
-const pessoa = {
-    nome: "Carina",
-    apelidos: ["Catarina", "Cat", "Catnip"]   
-}
+// const pessoa = {
+//     nome: "Carina",
+//     apelidos: ["Catarina", "Cat", "Catnip"]   
+// }
 
-function funcao(pessoa) {
-    const frase = `Eu sou ${pessoa.nome}, mas pode me chamar de: ${pessoa.apelidos[0]}, ${pessoa.apelidos[1]} ou ${pessoa.apelidos[2]}`
-    return frase
-}
+// function funcao(pessoa) {
+//     const frase = `Eu sou ${pessoa.nome}, mas pode me chamar de: ${pessoa.apelidos[0]}, ${pessoa.apelidos[1]} ou ${pessoa.apelidos[2]}`
+//     return frase
+// }
 
-console.log(funcao(pessoa))
+// console.log(funcao(pessoa))
 
-//b.
+// //b.
 // const pessoa2 = {
 //     ...pessoa,
 //     apelidos: ["Ca", "Cacá", "Cafe"]
-// } 
+// // } 
 // console.log(funcao(pessoa2))
 
-// // Exercícios 2
-// const perfil = {
-//     nome: "Naiara",
-//     idade: 23,
-//     profissao: "Farmacêutica"
-// }
+// Exercícios 2
+//a.
+const perfil1 = {
+    nome: "Naiara",
+    idade: 23,
+    profissao: "Farmacêutica"
+}
 
-// const perfil2 = {
-//     nome: "Henrique",
-//     idade: 29,
-//     profissao: "Contador"
-// }
+const perfil2 = {
+    nome: "Henrique",
+    idade: 29,
+    profissao: "Contador"
+}
 
-// const minhaFuncao = (perfil) => {
-//     return [nome, nome.lenght, idade, profissao, profissao.lenght]
-// }
-// console.log(minhaFuncao(perfil))
-// console.log(minhaFuncao(perfil2))
+//b.
+function minhaFuncao(perfil1){
+    const infos1 = [perfil1.nome, perfil1.nome.length, perfil1.idade, perfil1.profissao, perfil1.profissao.length]
+return infos1
+}
+
+console.log(minhaFuncao(perfil1))
+console.log(minhaFuncao(perfil2))
+
 
 // Exercício 3
+//a.
+const carrinho = []
 
+//b.
+const fruta1 = {
+    nome: "morango",
+    disponibilidade: true
+}
+
+const fruta2 = {
+    nome: "carambola",
+    disponibilidade: true
+}
+
+const fruta3 = {
+    nome: "banana",
+    disponibilidade: true
+}
+//c.
+function adicionaFruta(fruta1){
+    carrinho.push(fruta1)
+    carrinho.push(fruta2)
+    carrinho.push(fruta3)
+
+}
+//d.
+adicionaFruta(fruta1, fruta2, fruta3)
+console.log(carrinho)
