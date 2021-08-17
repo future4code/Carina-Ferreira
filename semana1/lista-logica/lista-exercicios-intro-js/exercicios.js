@@ -13,18 +13,27 @@ function imprimeMensagem() {
 
   console.log(mensagem)
 }
-//testeteste
+
 // EXERCÍCIOS PARA FAZER ------------------------------------------------------------------
 
 // EXERCÍCIO 01
 function calculaAreaRetangulo() {
   // implemente sua lógica aqui
+  let perguntaUsuarioAltura = prompt("Informe um número")
+  let perguntaUsuarioLargura = prompt("Informe outro número")
+
+  const calculaAreaRetangulo = perguntaUsuarioAltura * perguntaUsuarioLargura
 
 }
+console.log(calculaAreaRetangulo)
 
 // EXERCÍCIO 02
 function imprimeIdade() {
   // implemente sua lógica aqui
+const perguntaAnoAtual = prompt("Em que ano estamos?")
+const perfuntaAnoNascimento = prompt("Qual é o seu ano de nascimento?")
+
+const 
 
 }
 
@@ -105,4 +114,20 @@ function checaAnoBissexto(ano) {
 function checaValidadeInscricaoLabenu() {
   // implemente sua lógica aqui
 
+}
+
+
+
+
+
+
+
+const identidade = {
+  nome:
+  idade:
+}
+function minhaFuncao = {
+  if (nome = feminino) {
+    return "Bem-vinda, nomeDaPessoa"
+  }
 }
