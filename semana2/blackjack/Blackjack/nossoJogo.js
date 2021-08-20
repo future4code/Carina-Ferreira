@@ -40,23 +40,3 @@ else {
 
 
 
-
-
-
-
-//    const cartaUSuario = comprarCarta()
-//    const cartaUsuario2 = comprarCarta()
-//    const cartaComputador = comprarCarta()
-//    const cartaComputador2 = comprarCarta ()
-
-// let somaCartasUsuario = cartaUSuario + cartaUsuario2
-// let somaCartasComputador = cartaComputador + cartaComputador2
-// console.log(`Usuário cartas: ${carta.texto} ${carta.texto}, - ${somaCartasUsuario}`)
-// console.log (`Computador cartas: ${carta.texto} ${carta.texto}, - ${somaCartasComputador}`)
-
-
-// } else {
-// 	// o que fazer se o usuário clicar "cancelar"
-//    console.log("O jogo acabou")
-// }
-
