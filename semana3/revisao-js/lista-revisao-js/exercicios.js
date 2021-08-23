@@ -11,6 +11,8 @@ function retornaTamanhoArray(array) {
 console.log ("Tamanho do array:", retornaTamanhoArray(arrayTamanho))
 
 
+
+
 // EXERCÍCIO 02
 function retornaArrayInvertido(array) {
   let arrayInvertido = array.reverse()
@@ -18,6 +20,8 @@ function retornaArrayInvertido(array) {
 }
 retornaArrayInvertido(arrayInvertido)
 console.log(arrayInvertido)
+
+
 
 // EXERCÍCIO 03
 function retornaArrayOrdenado(array) {
@@ -27,21 +31,41 @@ array.sort(function(a, b){
 return array}
 retornaArrayOrdenado(arrayOrdenado)
 
+
+
 // EXERCÍCIO 04
 function retornaNumerosPares(array) {
-  
+    const arrayPares = array.filter(numero => numero % 2 === 0)
+
+return arrayPares 
 }
+retornaNumerosPares(array)
+
 
 // EXERCÍCIO 05
 function retornaNumerosParesElevadosADois(array) {
- 
+    const arrayPares = array.filter(numero => numero % 2 === 0)
+    return arrayPares ^ 2
 }
+
 
 // EXERCÍCIO 06
+// let arrayMaior = []
 function retornaMaiorNumero(array) {
-  
+    let numeros = []
+    let maiorNumero = 0;
+  for (let i = 0; i < array.length; i++){
+      if(array[i] > maiorNumero){
+          maiorNumero = array[i]
+      }
+  }
+  return maiorNumero
 }
-
+const resultadoMaiorNumero = retornaMaiorNumero(array)
+// retornaMaiorNumero(array)
+Math.max(...numeros)
+}
+retornaMaiorNumero(array)
 // EXERCÍCIO 07
 function retornaObjetoEntreDoisNumeros(num1, num2) {
 
