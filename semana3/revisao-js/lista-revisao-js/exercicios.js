@@ -13,11 +13,11 @@ console.log ("Tamanho do array:", retornaTamanhoArray(arrayTamanho))
 
 // EXERCÍCIO 02
 function retornaArrayInvertido(array) {
-//   let arrayInvertido = array.reverse()
-//   return arrayInvertido
-// }
-// retornaArrayInvertido(arrayInvertido)
-// console.log(arrayInvertido)
+  let arrayInvertido = array.reverse()
+  return arrayInvertido
+}
+retornaArrayInvertido(arrayInvertido)
+console.log(arrayInvertido)
 
 // EXERCÍCIO 03
 function retornaArrayOrdenado(array) {
