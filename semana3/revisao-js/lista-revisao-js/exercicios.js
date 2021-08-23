@@ -21,8 +21,11 @@ console.log(arrayInvertido)
 
 // EXERCÍCIO 03
 function retornaArrayOrdenado(array) {
-  
-}
+array.sort(function(a, b){
+    return a - b;
+})
+return array}
+retornaArrayOrdenado(arrayOrdenado)
 
 // EXERCÍCIO 04
 function retornaNumerosPares(array) {
