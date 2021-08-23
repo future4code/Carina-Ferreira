@@ -44,15 +44,16 @@ retornaNumerosPares(array)
 
 // EXERCÍCIO 05
 function retornaNumerosParesElevadosADois(array) {
-    const arrayPares = array.filter(numero => numero % 2 === 0)
-    return arrayPares ^ 2
+    const arrayPares2 = array.filter(num => num % 2 === 0 )
+    let arrayPares2 = Math.pow()
+    return array
 }
+retornaNumerosParesElevadosADois(array)
+
 
 
 // EXERCÍCIO 06
-// let arrayMaior = []
 function retornaMaiorNumero(array) {
-    let numeros = []
     let maiorNumero = 0;
   for (let i = 0; i < array.length; i++){
       if(array[i] > maiorNumero){
@@ -62,10 +63,10 @@ function retornaMaiorNumero(array) {
   return maiorNumero
 }
 const resultadoMaiorNumero = retornaMaiorNumero(array)
-// retornaMaiorNumero(array)
-Math.max(...numeros)
-}
+
 retornaMaiorNumero(array)
+
+
 // EXERCÍCIO 07
 function retornaObjetoEntreDoisNumeros(num1, num2) {
 
