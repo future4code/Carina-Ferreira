@@ -44,9 +44,9 @@ retornaNumerosPares(array)
 
 // EXERCÍCIO 05
 function retornaNumerosParesElevadosADois(array) {
-    const arrayPares2 = array.filter(num => num % 2 === 0 )
-    let arrayPares2 = Math.pow()
-    return array
+    const arrayPares2 = array.filter(num => num % 2 === 0)
+    // let arrayPares2 = Math.pow()
+    return arrayPares2
 }
 retornaNumerosParesElevadosADois(array)
 
@@ -69,6 +69,13 @@ retornaMaiorNumero(array)
 
 // EXERCÍCIO 07
 function retornaObjetoEntreDoisNumeros(num1, num2) {
+let recebeObjeto = {
+    maiorNumeroObjeto: 
+    maiorDivisivelPorMenor: 
+    diferença:
+
+}
+
 
 }
 
