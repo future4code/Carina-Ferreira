@@ -9,6 +9,14 @@
     padding: 0;
 }
 
+body {
+    font-family:"Roboto";
+}
+
+body{
+    font-family:"Roboto";
+}
+
 h2 {
     background-color: #fe7e02;
     padding: 10px 5px 10px 5px;
@@ -108,7 +116,9 @@ div:last-child {
 table {
     width: 60%;
     margin: auto;
-}
+    /* padding-left: 150px;
+    
+} */
 
 td button {
     background-color: #fadf63;
@@ -142,4 +152,10 @@ td button:hover {
 #back-button:hover {
     background-color: #635a3d;
     color: white;
+    margin-left: 50px;
+}
+
+
+.fonte{
+    font-family: "Roboto";
 }
