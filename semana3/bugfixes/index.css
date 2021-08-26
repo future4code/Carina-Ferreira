@@ -35,7 +35,7 @@ div>p:first-child {
 }
 
 div img {
-    background: black;
+        width: 70px
 }
 
 .botao-amarelo {
@@ -132,3 +132,7 @@ td button {
 #back-button:hover {
     background-color: #635a3d
 }
+/* 
+.tamanho-img {
+    width: 70px
+} */
