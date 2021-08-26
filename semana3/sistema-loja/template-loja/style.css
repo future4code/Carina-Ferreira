@@ -1,0 +1,91 @@
+/* /////////////INDEX///////////// */
+.estilo-index{
+    background-color: rgb(97, 179, 185);
+    border-width: 8px;
+    border-style: solid;
+    border-color: rgb(255, 255, 255);  
+    margin-top: 25px;
+    margin-bottom: 25px;
+    margin-left: 25px;
+    margin-right: 25px;
+    padding: 140px;
+    text-align: center;
+
+}
+
+
+.botoes {
+    font-size: 50;
+    color:black
+}
+
+p {
+    font-size: 30px;
+}
+
+/* a href{
+    font-size: 30 px;
+} */
+
+
+
+/* ////////////////ESTOQUE/////////// */
+.estilo-estoque{
+    background-color: rgb(255, 255, 255);
+    border-width: 8px;
+    border-style: solid;
+    border-color: rgb(97, 179, 185);  
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding: 25px;
+    text-align: center;
+
+}
+
+.aumenta-letra{
+    font-size: 20px;
+}
+
+
+
+/* /////////////ADD PRODUTO//////////// */
+.estilo-add-produto{
+    background-color: rgb(97, 179, 185);
+    border-width: 10px;
+    border-style: solid;
+    border-color: rgb(255, 255, 255);  
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    padding: 150px;
+
+}
+
+.posicao{
+    text-align: center;
+}
+
+.teste{
+    float: left;
+}
+
+/* /////////////FUNCIONÁRIOS//////////// */
+.estilo-funcionarios{
+    background-color: rgb(255, 255, 255);
+    border-width: 8px;
+    border-style: solid;
+    border-color: rgb(97, 179, 185);  
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    padding: 150px;
+
+}
+
+.aumenta-letra{
+    font-size: 20px;
+}
