@@ -67,6 +67,7 @@ div img {
 .container {
     height: 500px;
     text-align: center;
+    padding-top: 300px;
 }
 
 .icone {
@@ -83,7 +84,7 @@ div img {
 #container-de-descricao {
     background-color: #2274a5;
     color: white;
-    padding-top: 100px;
+    padding-top: 130px;
 
 }
 
@@ -147,12 +148,12 @@ td button:hover {
     border-radius: 5px;
     font-size: 10px;
     color: black;
+    margin-left: 50vw;
 }
 
 #back-button:hover {
     background-color: #635a3d;
     color: white;
-    margin-left: 50px;
 }
 
 
