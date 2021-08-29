@@ -1,13 +1,32 @@
 
 /* ////////////ESTILOS ALEATÓRIOS///////////// */
 
+.centralizar{
+    text-align: center;
+    margin-top: 20px;
+    padding-top: 20px;
+    font-size: 50px;
+}
 
-
-
+.estilo-body{
+    border-top-width: 8px;
+    border-bottom-width: 0px;
+    border-left-width: 0px;
+    border-right-width: 0px;
+    border-style: solid;
+    border-color: rgb(0, 0, 0);
+    margin-top: 12px;
+}
 p{
     margin:0;
-    background-color: aqua;
+    /* background-color: aqua; */
     
+}
+
+#imagem-flor{
+    width: 230px;
+    text-align: left;
+
 }
 
 /* {
@@ -20,20 +39,38 @@ p{
 /////////////////ESTILO HOME///////////////////// */
 .estilo-rodape{
     text-align: center;
-    margin-top: 30px;
+    margin-top: 50px;
+    margin-bottom: 0px;
+    padding-bottom: 0%;
 }
 
 .botoes{
 
 }
 
+
+
+
 #estilo-botao-principal{
-    width: 700;
-    height: 350px;
-    margin-left: 200px;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    text-align: center;
+    width: 300;
+    height: 200px;
+    margin-left: 250px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding: auto;
+    background-color: black;
+    color: white;
+    border-radius: 100px;
 }
 
 /* /////////////////ESTILO GALERIA///////////////////
 /////////////////ESTILO CONTATO//////////////////// */
+
+/* /////////////////ESTILO SOBRE MIM //////////////////*/
+
+#cabeçalho-sobremim{
+    background-color: black;
+    color:white;
+    text-align: center;
+}
