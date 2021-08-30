@@ -1,11 +1,28 @@
 
 /* ////////////ESTILOS ALEATÓRIOS///////////// */
+.cabeçalho{
+    background-color: black;
+    color: white;
+    text-align: center;
+    font-size: 30px;
+    /* position: fixed; */
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    
+} 
+
 
 .centralizar{
     text-align: center;
-    margin-top: 20px;
+    margin-top: 5px;
     padding-top: 20px;
     font-size: 50px;
+}
+
+.texto-secundario{
+    text-align: center;
 }
 
 .estilo-body{
@@ -23,6 +40,13 @@
     text-align: left;
 
 }
+.estilo-header{
+
+}
+
+.botoes{
+    color:white;
+}
 
 /* /////////////////ESTILO HOME///////////////////// */ */
 .estilo-rodape{
@@ -32,12 +56,9 @@
     padding-bottom: 0%;
 }
 
-/* .botoes{
-
+#texto-inicial{
+    text-align: center;
 }
-
- */
-
 
 #estilo-botao-principal{
     text-align: center;
@@ -56,17 +77,11 @@
 #imagens-galeria{
     width: 500px;
     margin-left: 180px;
-    margin-top: 50px;
-    margin-bottom: 50px;
+    margin-top: 20px;
+    margin-bottom: 20px;
    
 }
 
-.cabeçalho{
-    background-color: black;
-    color: white;
-    text-align: center;
-    font-size: x-large;
-} 
 
 #formato-galeria{
     margin-top: 100px;
@@ -80,19 +95,50 @@ h3{
 /*/////////////////ESTILO CONTATO//////////////////// */
 .estilo-input{
     width: 50px;
-    
 }
 
+.imagem-contato{
+    margin-top: 90px;
+    margin-bottom: 50px;
+    margin-left: 300px;
+    padding-left: 0px;
+    width: 100px;
+}
 
 
 /* /////////////////ESTILO SOBRE MIM //////////////////*/
 
 #cabeçalho-sobremim{
-    background-color: black;
-    color:white;
     text-align: center;
 }
 
 .fontea{
     color: white;
+}
+
+#foto-perfil{
+    width: 300px;
+    margin-top: 100px;
+    margin-bottom: 70px;
+    margin-left: 100px;
+    float:left;
+}
+
+#texto{
+    font-size: 20px;
+}
+
+#lista{
+font-size: 20px;
+}
+
+.imagem-loja{
+    width: 700px;
+    margin-left: 0px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.fontetexto{
+    font-size: 10px ;
 }
