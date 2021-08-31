@@ -55,10 +55,10 @@ main{
 section{
     display: flex;
     flex-direction: column;
-    margin-left: 10px;
+    /* margin-left: 10px;
     margin-right: 10px;
     margin-top: 20px;
-    margin-bottom: 20px;
+    margin-bottom: 20px; */
     color: black;
     background-color: #f2d0e0;
 }
@@ -74,11 +74,15 @@ a{
     background-color: #f2d0e0;
 }
 p{
-    background-color: cadetblue;
+    background-color: white;
     display: flex;
     flex-grow: inherit;
-    height: 615px;
+    height: 635px;
     margin-top: 0;
     /* align-items: center; */
     justify-content: center;
+}
+
+.bolo{
+    background-color: mediumvioletred;
 }
