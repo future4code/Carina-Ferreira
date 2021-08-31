@@ -155,3 +155,5 @@ function checaValidadeInscricaoLabenu() {
 console.log(usuarioEhMaiorDeIdade === "sim" && usuarioPossuiEnsinoMedio === "sim" && usuariopPossuiDisponibilidadeHorario === "sim")
 }
 
+
+
