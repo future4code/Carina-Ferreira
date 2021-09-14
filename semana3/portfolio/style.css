@@ -1,0 +1,144 @@
+
+/* ////////////ESTILOS ALEATÓRIOS///////////// */
+.cabeçalho{
+    background-color: black;
+    color: white;
+    text-align: center;
+    font-size: 30px;
+    /* position: fixed; */
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    
+} 
+
+
+.centralizar{
+    text-align: center;
+    margin-top: 5px;
+    padding-top: 20px;
+    font-size: 50px;
+}
+
+.texto-secundario{
+    text-align: center;
+}
+
+.estilo-body{
+    border-top-width: 8px;
+    border-bottom-width: 0px;
+    border-left-width: 0px;
+    border-right-width: 0px;
+    border-style: solid;
+    border-color: rgb(0, 0, 0);
+    margin-top: 12px;
+}
+
+#imagem-flor{
+    width: 230px;
+    text-align: left;
+
+}
+.estilo-header{
+
+}
+
+.botoes{
+    color:white;
+}
+
+/* /////////////////ESTILO HOME///////////////////// */ */
+.estilo-rodape{
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 0px;
+    padding-bottom: 0%;
+}
+
+#texto-inicial{
+    text-align: center;
+}
+
+#estilo-botao-principal{
+    text-align: center;
+    width: 300;
+    height: 200px;
+    margin-left: 250px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding: auto;
+    background-color: black;
+    color: white;
+    border-radius: 100px;
+}
+
+/* /////////////////ESTILO GALERIA/////////////////// */
+#imagens-galeria{
+    width: 500px;
+    margin-left: 180px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+   
+}
+
+
+#formato-galeria{
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+h3{
+    text-align: center;
+}
+
+/*/////////////////ESTILO CONTATO//////////////////// */
+.estilo-input{
+    width: 50px;
+}
+
+.imagem-contato{
+    margin-top: 90px;
+    margin-bottom: 50px;
+    margin-left: 300px;
+    padding-left: 0px;
+    width: 100px;
+}
+
+
+/* /////////////////ESTILO SOBRE MIM //////////////////*/
+
+#cabeçalho-sobremim{
+    text-align: center;
+}
+
+.fontea{
+    color: white;
+}
+
+#foto-perfil{
+    width: 300px;
+    margin-top: 100px;
+    margin-bottom: 70px;
+    margin-left: 100px;
+    float:left;
+}
+
+#texto{
+    font-size: 20px;
+}
+
+#lista{
+font-size: 20px;
+}
+
+.imagem-loja{
+    width: 700px;
+    margin-left: 0px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.fontetexto{
+    font-size: 10px ;
+}
