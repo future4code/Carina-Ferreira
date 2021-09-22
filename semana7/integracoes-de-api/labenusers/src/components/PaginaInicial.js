@@ -21,11 +21,7 @@ margin: 0 auto;
 padding: 30px;
 `
 
-const headers = {
-    headers: {
-      Authorization: "carina-ferreira-maryam"
-    }
-  };
+
 
 export class PaginaInicial extends React.Component {
     state = {
@@ -52,25 +48,32 @@ export class PaginaInicial extends React.Component {
           name: this.state.nomeUsuario,
           email: this.state.emailUsuario
         };
+
+        const headers = {
+          headers: {
+            Authorization: "carina-ferreira-maryam"
+          }
+        };
     
         axios
           .post(url, body, headers)
           .then((res) => {
-            this.setState({ nomeUsuario: "" });
+            this.setState({ nomeUsuario: "", emailUsuario:'' });
+            alert("Usuário cadastrado!")
           })
           .catch((err) => {
-            alert(err.response.data.message);
+            alert("Insira um usuário válido!");
           });
       };
 
 
     render() {
-        // const componentesUsuario = this.state.listaUsuarios.map((lista) => {
-        //     return <li key={lista.id}>{lista.name}</li>;
-        //   });
+    
 return (
     <div>
+      <button onClick={this.props.irParaProximaEtapa}>Ir para lista de usuários</button>
       <CaixaDiv>
+        <h3>Cadastro de Usuário</h3>
         <label>Nome:</label>
         <input  type="text"
                 placeholder = "Insira seu nome"

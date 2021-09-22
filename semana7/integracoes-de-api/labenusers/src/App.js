@@ -7,34 +7,6 @@ import PaginaInicial from "./components/PaginaInicial";
 
 
 
-
-const CaixaDiv = styled.div`
-
-display: -webkit-box;
-display: -webkit-flex;
-display: -ms-flexbox;
-display: flex;
--webkit-flex-direction: column;
--ms-flex-direction: column;
-flex-direction: column;
-border: 1px solid black;
-width: 20%;
-margin: 0 auto;
-padding: 30px;
-`
-
-
-
-
-// const headers = {
-//   headers: {
-//     Authorization: "leticia-chijo-maryam"
-//   }
-// };
-
-
-
-
 export class App extends React.Component {
   state = {
     etapa: 1,
@@ -43,9 +15,9 @@ export class App extends React.Component {
   renderizaEtapa = () => {
     switch (this.state.etapa){
       case 1:
-        return <PaginaInicial />;
+        return <PaginaInicial irParaProximaEtapa={this.irParaProximaEtapa}/>;
         case 2:
-          return <PaginaLista />
+          return <PaginaLista voltarEtapa={this.voltarEtapa}/>
 
     }
   }
@@ -55,15 +27,17 @@ export class App extends React.Component {
 
   };
 
+  voltarEtapa = () =>{
+    this.setState({etapa: this.state.etapa -1})
+
+  };
 
   render() {
 
     return (
       <div>
 
-        {this.renderizaEtapa()}
-        {this.state.etapa !== 2 &&(
-        <button onClick = {this.irParaProximaEtapa}>Próxima etapa</button>)}
+        {this.renderizaEtapa()} 
 
       </div>
     );
