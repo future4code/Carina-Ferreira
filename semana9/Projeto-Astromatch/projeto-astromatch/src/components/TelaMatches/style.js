@@ -8,7 +8,8 @@ export const EstiloLista = styled.div`
   display: flex;
   justify-content: space-between;
   justify-align: center;
-  width: 300px;
+  width: 350px;
+  
 `
 export const CaixaDiv = styled.div`
 background-color: pink;
@@ -26,6 +27,7 @@ border-color: pink;
 background-color: pink;
 display: flex;
 justify-content: space-evenly;
+align-items: center;
 width: 50px;
 height:60px;
 cursor: pointer;
@@ -36,6 +38,20 @@ background-color:pink;
 border-radius: 50px;
 margin-bottom: 2px;
 `
+export const ImgPerfilMatch = styled.img`
+width: 100px;
+height: 90px;
+border-radius: 70px;
+`
+
+export const EstiloDivNome = styled.div`
+display: flex;
+justify-content: center;
+align-items: center;
+font-size: large;
+text-align: center;
+`
+
 export const EstiloH3 = styled.h3`
 margin: 0;
 padding: 5px;

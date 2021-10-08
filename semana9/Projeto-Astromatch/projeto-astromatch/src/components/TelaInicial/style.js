@@ -7,28 +7,16 @@ justify-content: center;
 flex-direction: column;
 border: 10px solid black;
 border-radius: 15px;
-width: 30%;
+width: 25%;
 height: 80%;
 position: fixed;
-margin-left: 500px;
+margin-left: 550px;
 padding: 30px;
 `
-export const BotaoAvisoClear = styled.button`
-background-color: pink;
-display: flex;
-justify-content: center;
-flex-direction: column;
-border: 10px solid black;
-border-radius: 15px;
-width: 30%;
-height: 40%;
-// position: fixed;
-font-size: x-large;
-margin-left: 20px;
-padding: 30px;
-cursor: pointer;
+export const AvisoClear = styled.p`
+font-size: xx-large;
+text-align: center;
 `
-
 
 export const EstiloImagem = styled.img`
 width: 60%;
@@ -40,12 +28,11 @@ align-self: center;
 export const EstiloP = styled.p`
 font-size: xx-large;
 text-align: center;
-margin-left: 110px;
+margin-left: 70px;
 margin-top: 270px;
 position: absolute;
 color: white; 
 text-shadow: black 0.2em 0.2em 0.3em;
-// -webkit-text-stroke: white 1px;
 `
 export const EstiloDivBio = styled.div`
 font-size: large;
@@ -91,4 +78,8 @@ justify-content: space-evenly;
 width: 50px;
 height:60px;
 cursor: pointer;
+:hover {
+    transform: scale(1.5);
+    transition: all 0.5s;
+  } 
 `

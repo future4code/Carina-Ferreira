@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import {CaixaDiv, EstiloBotao, EstiloImagem, EstiloP, EstiloH3, ImgBotao, DivBotoes, EstiloDivBio, ImgBottonFlame, BotaoAvisoClear} from "./style";
+import {CaixaDiv, EstiloBotao, EstiloImagem, EstiloP, EstiloH3, ImgBotao, DivBotoes, EstiloDivBio, ImgBottonFlame, AvisoClear} from "./style";
 import IconeCheck from '../img/yes.png'
 import IconeX from '../img/no.png'
 import IconeFlame from '../img/flame.png'
@@ -13,7 +13,7 @@ const TelaInicial = (props) => {
    const aluno = "carina-ferreira-maryam"
    
     const getProfile = () => {
-        const url = `https://us-central1-missao-newton.cloudfunctions.net/astroMatch/:${aluno}/person`;
+        const url = `https://us-central1-missao-newton.cloudfunctions.net/astroMatch/${aluno}/person`;
     
         axios
           .get(url)
@@ -22,12 +22,12 @@ const TelaInicial = (props) => {
             console.log(res.data)
           })
           .catch((err) => {
-            // alert("Deu erro no getprofileee!");
+            alert("Ocorreu um erro! Tente novamente.");
           });
       };
 
       const choosePerson = (idProfile, choiceProfile) => {
-        const url = `https://us-central1-missao-newton.cloudfunctions.net/astroMatch/:${aluno}/choose-person`;
+        const url = `https://us-central1-missao-newton.cloudfunctions.net/astroMatch/${aluno}/choose-person`;
 
         const body =
         {
@@ -43,7 +43,7 @@ const TelaInicial = (props) => {
 
           })
           .catch((err) => {
-            alert("O choosePerson deu errado!!!");
+            alert("Ocorreu um erro! Tente novamente.");
           });
       };
 
@@ -55,25 +55,10 @@ const TelaInicial = (props) => {
       
 
 
-    const clearProfile = (props) => {
-        const url = `https://us-central1-missao-newton.cloudfunctions.net/astroMatch/:${aluno}/clear`;
-    
-    
-        axios
-          .put(url)
-          .then((res) => {
-            alert("Pronto! Agora atualize a página! (:")
-          })
-          .catch((err) => {
-            alert("Ocorreu um erro, tente novamente!");
-          });
-      };
-
-
     
 return (
     <div>
-        {!profile ? <BotaoAvisoClear onClick = {clearProfile}> Infelizmente acabaram os perfis, clique aqui para resetar e em seguida atualize a página! </BotaoAvisoClear>:
+        {!profile ? <AvisoClear> Infelizmente acabaram os perfis, clique no botão para limpar as informações e em seguida atualize a página! </AvisoClear>:
         <CaixaDiv>
           <EstiloBotao onClick={props.irParaProximaEtapa}>
                        <ImgBottonFlame src = {IconeFlame}/>

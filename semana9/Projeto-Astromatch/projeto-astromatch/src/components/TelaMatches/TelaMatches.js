@@ -1,5 +1,5 @@
 import React, { useState, useEffect} from "react";
-import {EstiloLista, CaixaDiv, EstiloBotao, ImgBotao, EstiloH3} from "./style";
+import {EstiloLista, CaixaDiv, EstiloBotao, ImgBotao, EstiloH3, ImgPerfilMatch, EstiloDivNome} from "./style";
 import IconeBack from '../img/back.png'
 import axios from "axios";
 
@@ -8,16 +8,15 @@ const TelaMatches = (props) => {
 
 
   const getMatches = () => {
-    const url = `https://us-central1-missao-newton.cloudfunctions.net/astroMatch/:${props.aluno}/matches`;
+    const url = `https://us-central1-missao-newton.cloudfunctions.net/astroMatch/carina-ferreira-maryam/matches`;
 
     axios
       .get(url)
       .then((res) => {
-        console.log(res)
          setMatchList(res.data.matches);
       })
       .catch((err) => {
-        alert('A LISTA DE MATCHES NÃO ROLOU');
+        alert('Houve um erro, tente novamente!');
       });
       
   };
@@ -28,27 +27,13 @@ const TelaMatches = (props) => {
 
 );
 
-// const clearProfile = (props) => {
-//   const url = `https://us-central1-missao-newton.cloudfunctions.net/astroMatch/:${props.aluno}/clear`;
-
-
-//   axios
-//     .put(url)
-//     .then((res) => {
-//       console.log("Resetou os perfis")
-//     })
-//     .catch((err) => {
-//       alert("Deu erro no clear!");
-//     });
-// };
-
  
    
 const listaMatches = matchList.map((profile) =>{
   return (
   <EstiloLista key={profile.id}>
-               <img src={profile.photo} alt={profile.photo} />
-               {profile.name}
+               <ImgPerfilMatch src={profile.photo} alt={profile.photo} />
+               <EstiloDivNome>{profile.name} </EstiloDivNome>
   </EstiloLista>
   )
 }) 

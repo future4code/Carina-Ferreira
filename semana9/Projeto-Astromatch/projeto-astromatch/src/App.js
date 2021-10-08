@@ -1,7 +1,7 @@
-import React, {useState} from "react";
-// import styled from "styled-components";
+import React, {useState, useEffect} from "react";
 import TelaInicial from './components/TelaInicial/TelaInicial'
-// import axios from "axios";
+import axios from "axios";
+import {EstiloBotao} from "./style";
 import TelaMatches from "./components/TelaMatches/TelaMatches";
 
 
@@ -22,24 +22,24 @@ const App = (props) => {
     }
   }
 
-//   const clearProfile = (props) => {
-//     const url = `https://us-central1-missao-newton.cloudfunctions.net/astroMatch/:${props.aluno}/clear`;
+  const clearProfile = (props) => {
+    const url = `https://us-central1-missao-newton.cloudfunctions.net/astroMatch/carina-ferreira-maryam/clear`;
   
-//     axios
-//       .put(url)
-//       .then((res) => {
-//         console.log("Resetou os perfis")
-//       })
-//       .catch((err) => {
-//         alert("Deu erro no clear!");
-//       });
-//   };
+    axios
+      .put(url)
+      .then((res) => {
+        alert("Pronto! Atualize a página!")
+      })
+      .catch((err) => {
+        alert("Deu erro no clear!");
+      });
+  };
 
-//   useEffect(() => {
-//     clearProfile();
-// }, []
+  useEffect(() => {
+    clearProfile();
+}, []
 
-// );
+);
   
 
   const irParaProximaEtapa = () => {
@@ -56,8 +56,8 @@ const App = (props) => {
     return (
       <div>
 
-        {renderizaEtapa()} 
-        {/* <button onClick = {clearProfile}> LIMPAAAA </button> */}
+        <div>{renderizaEtapa()}</div>
+        <EstiloBotao onClick = {clearProfile}> Limpar </EstiloBotao>
 
         
       </div>
