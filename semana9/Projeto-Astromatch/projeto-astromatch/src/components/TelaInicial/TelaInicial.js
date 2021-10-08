@@ -1,115 +1,71 @@
 import React, { useState, useEffect } from "react";
-import styled from "styled-components";
+import {CaixaDiv, EstiloBotao, EstiloImagem, EstiloP, EstiloH3, ImgBotao, DivBotoes, EstiloDivBio, ImgBottonFlame, BotaoAvisoClear} from "./style";
+import IconeCheck from '../img/yes.png'
+import IconeX from '../img/no.png'
+import IconeFlame from '../img/flame.png'
 import axios from "axios";
 
 
 
-
-
-const CaixaDiv = styled.div`
-display: -webkit-box;
-display: -webkit-flex;
-display: -ms-flexbox;
-display: flex;
--webkit-flex-direction: column;
--ms-flex-direction: column;
-flex-direction: column;
-border: 1px solid black;
-width: 20%;
-margin: 0 auto;
-padding: 30px;
-`
-
-
-
 const TelaInicial = (props) => {
-   const [profile, setProfile] = useState([])
-  
+   const [profile, setProfile] = useState({})
 
-
-    // alteraNomeUsuario = (e) => {
-    //     this.setState({ nomeUsuario: e.target.value });
-    //   };
-
-    // alteraEmailUsuario = (e) => {
-    //     this.setState({ emailUsuario: e.target.value });
-    //   };
-
+   const aluno = "carina-ferreira-maryam"
+   
     const getProfile = () => {
-        const url =
-          "https://us-central1-missao-newton.cloudfunctions.net/astroMatch/:aluno/person";
-    
-
-        const headers = {
-          headers: {
-            Authorization: "carina-ferreira-maryam"
-          }
-        };
+        const url = `https://us-central1-missao-newton.cloudfunctions.net/astroMatch/:${aluno}/person`;
     
         axios
-          .get(url, headers)
+          .get(url)
           .then((res) => {
             setProfile(res.data.profile);
             console.log(res.data)
           })
           .catch((err) => {
-            alert("Insira um usuário válido!");
+            // alert("Deu erro no getprofileee!");
           });
       };
 
-      const choosePerson = () => {
-        const url =
-          "https://us-central1-missao-newton.cloudfunctions.net/astroMatch/:aluno/choose-person";
+      const choosePerson = (idProfile, choiceProfile) => {
+        const url = `https://us-central1-missao-newton.cloudfunctions.net/astroMatch/:${aluno}/choose-person`;
 
         const body =
         {
-            "id": (profile.id),
-            "choice": true
+            id: idProfile,
+            choice: choiceProfile
         }
     
-
-        const headers = {
-          headers: {
-            Authorization: "carina-ferreira-maryam"
-          }
-        };
-    
         axios
-          .post(url,body, headers)
+          .post(url,body)
           .then((res) => {
-            // setProfile(res.data.profile);
-            console.log("UHUUU!!! MATCHEEE")
+            getProfile(res.data)
+            console.log(res.data)
+
           })
           .catch((err) => {
             alert("O choosePerson deu errado!!!");
           });
       };
 
-
-    useEffect(() => {
+      useEffect(() => {
         getProfile();
     }, []
     
     );
+      
 
-    const clearProfile = () => {
-        const url =
-          "https://us-central1-missao-newton.cloudfunctions.net/astroMatch/:aluno/clear";
+
+    const clearProfile = (props) => {
+        const url = `https://us-central1-missao-newton.cloudfunctions.net/astroMatch/:${aluno}/clear`;
     
-
-        const headers = {
-          headers: {
-            Authorization: "carina-ferreira-maryam"
-          }
-        };
     
         axios
-          .put(url, headers)
+          .put(url)
           .then((res) => {
-            console.log("Resetou os perfis")
+            alert("Pronto! Agora atualize a página! (:")
           })
           .catch((err) => {
-            alert("Deu erro no clear!");
+            alert("Ocorreu um erro, tente novamente!");
           });
       };
 
@@ -117,18 +73,31 @@ const TelaInicial = (props) => {
     
 return (
     <div>
-      <CaixaDiv>
-        <button onClick={props.irParaProximaEtapa}>Ver meus matchs</button>
-        <h3>AstroMatch</h3>
-        <p> Nome do perfil: {profile.name}, {profile.age}</p>
-        <img src={profile.photo} alt={profile.photo} />
-        <div>{profile.bio}</div>
-        <button  >X</button>
-        <button onClick = {choosePerson(true)}>OK</button>
+        {!profile ? <BotaoAvisoClear onClick = {clearProfile}> Infelizmente acabaram os perfis, clique aqui para resetar e em seguida atualize a página! </BotaoAvisoClear>:
+        <CaixaDiv>
+          <EstiloBotao onClick={props.irParaProximaEtapa}>
+                       <ImgBottonFlame src = {IconeFlame}/>
+          </EstiloBotao>
 
-      </CaixaDiv>
-      <button onClick = {console.log("Cliquei no botão")}> LIMPAAAA </button>
-      
+          <EstiloH3>AstroMatch</EstiloH3>
+          <EstiloP> {profile.name}, {profile.age}</EstiloP>
+          <EstiloImagem src={profile.photo} alt={profile.photo} />
+          <br/>
+          <EstiloDivBio>{profile.bio}</EstiloDivBio>
+
+          <DivBotoes>
+            <EstiloBotao onClick = {() => choosePerson(profile.id, false)}>
+                                 <ImgBotao src = {IconeX}/>
+            </EstiloBotao>
+
+            <EstiloBotao onClick = {() => choosePerson(profile.id, true)}> 
+                                 <ImgBotao src = {IconeCheck}/>
+            </EstiloBotao>
+          </DivBotoes>
+
+        </CaixaDiv>
+    
+      }
       
     </div>
   );
