@@ -18,32 +18,29 @@ function App() {
         <HomePage/>
       </Route>
 
-      <Route exact path= {"/ListTrips"}>
+      <Route exact path= {"/trips/list"}>
         <ListTripsPage/>
       </Route>
 
-      <Route exact path= {"/ApplicationForm"}>
+      <Route exact path= {"/trips/application"}>
         <ApplicationFormPage/>
       </Route>
 
-      <Route exact path= {"/Login"}>
+
+      <Route exact path= {"/login"}>
         <LoginPage/>
       </Route>
 
-      <Route exact path= {"/Login"}>
-        <LoginPage/>
-      </Route>
-
-      <Route exact path= {"/Adm"}>
+      <Route exact path= {"/adm"}>
         <AdminHomePage/>
       </Route>
 
-      <Route exact path= {"/TripDetails"}>
-        <TripDetailsPage/>
+      <Route exact path= {"/admin/trips/create"}>
+        <CreateTripPage/>
       </Route>
 
-      <Route exact path= {"/CreateTrip"}>
-        <CreateTripPage/>
+      <Route exact path= {"/admin/trips/:id"}>
+        <TripDetailsPage/>
       </Route>
 
       {/* </div> */}
