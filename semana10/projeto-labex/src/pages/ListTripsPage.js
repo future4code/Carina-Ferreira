@@ -4,7 +4,7 @@ import { useHistory } from "react-router-dom"
 export const ListTripsPage = () => {
     const history = useHistory ()
     const goToApplicationFormPage = () => {
-        history.push("trips/application")
+        history.push("/trips/application")
     }
     const goBack = () => {
         history.goBack()

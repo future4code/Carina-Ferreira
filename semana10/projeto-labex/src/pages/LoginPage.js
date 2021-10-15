@@ -11,9 +11,17 @@ export const LoginPage = () => {
     }
   return (
     <div>
-        <button onClick={goBack}>BACK HOME</button>
-        <button onClick={goToAdmHomePage}>BOTÃO ENTRAR</button>
-        <p> OI! EU SOU A LOGIN PAGE </p>
+      <h2>LOGIN</h2>
+      <input
+      placeholder = 'Email'
+      />
+      <input
+      placeholder = 'Senha'
+      />
+      <br/>
+      <button onClick={goBack}>BACK HOME</button>
+      <button onClick={goToAdmHomePage}>BOTÃO ENTRAR</button>
+      <p> OI! EU SOU A LOGIN PAGE </p>
     </div>
   );
 };
