@@ -28,6 +28,11 @@ export const TripDetailsPage = () => {
     <div>
         <button onClick={goBack}>VOLTAR</button>
         <p> OI! EU SOU A TRIP DETAILS PAGE </p>
+        <h3>Detalhe da viagem:</h3>
+          <p> Nome: </p>
+          {/* <EstiloImagem src={profile.photo} alt={profile.photo} /> */}
+          <br/>
+          {/* <EstiloDivBio>{profile.bio}</EstiloDivBio> */}
     </div>
   );
 };
