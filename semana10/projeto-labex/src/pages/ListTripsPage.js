@@ -15,7 +15,7 @@ font-size: large;
 padding: 10px;
 `
 
-export const ListTripsPage = (props) => {
+export const ListTripsPage = () => {
   const [tripsList, setTripsList] = useState([])
 
     const history = useHistory ()
@@ -56,6 +56,8 @@ export const ListTripsPage = (props) => {
                 <p>Planeta: {trips.planet} </p>
                 <br/>
                 <p>Duração:{trips.durationInDays} </p>
+                <br/>
+                <p>Data:{trips.date} </p>
 
     </EstiloCard>
     )

@@ -1,37 +1,72 @@
-import {useEffect} from "react";
+import {useEffect, useState} from "react";
 import axios from 'axios';
-import { useHistory } from "react-router-dom";
+import { useHistory, useParams } from "react-router-dom";
+import { useProtectedPage } from "../hooks/ProtectPages"; 
 
 export const TripDetailsPage = () => {
+  const [trip, setTripList] = useState()
+  useProtectedPage()
+
+  const params = useParams();
+
     const history = useHistory ()
     const goBack = () => {
         history.goBack()
     }
 
-    useEffect(() => {
-      const token = localStorage.getItem('token')
-      axios.get('https://us-central1-labenu-apis.cloudfunctions.net/labeX/carina-ferreira-maryam/trip/Tx7tgAA34T3ukvrSf73F', {
-        headers: {
-          auth: token
-        }
-      })
-      .then((res) => {
-        // getProfile(res.data)
-        console.log("o trip details deu certo!!!", res.data)
+    const getTripDetail = () => {
 
-      })
-      .catch((err) => {
-        console.log("Ocorreu um erro no tripdetails!", err.response);
-      });
-    })
+      const token = localStorage.getItem('token')
+    const url = `https://us-central1-labenu-apis.cloudfunctions.net/labeX/carina-ferreira-maryam/trip/${params.id}`;
+
+      const header = {
+        headers:{
+        auth: token,
+      }
+     }
+      console.log("oi, eu sou o headerss", header)
+
+      axios
+        .get(url, header)
+        .then((res) => {
+          setTripList(res.data)
+          console.log("O  cTRIPDETAIL DEU Certo!!!", res.data)
+        })
+
+        .catch((err) => {
+          console.log("Ocorreu um erro NO DETAIL!", err.res);
+        });
+      }
+
+    // const getTripDetail = () => {
+    //   axios.get(`https://us-central1-labenu-apis.cloudfunctions.net/labeX/carina-ferreira-maryam/trip/${params.id}`, 
+    //   {}
+    //     // headers: {
+    //     //   auth: window.localStorage.getItem('token')
+    //     // }
+    //   )
+    //   .then((response) => {
+    //     // setTrip(response.data.trip)
+    //     console.log("O gettrip deu certooo")
+    //   })
+    //   .catch((err) => {
+    //     console.log("Ocorreu um erro no tripdetails!", err.response);
+    //   });
+    // }
+  
+  
+    useEffect(() => {
+      getTripDetail()
+    }, [])
+
   return (
     <div>
         <button onClick={goBack}>VOLTAR</button>
         <p> OI! EU SOU A TRIP DETAILS PAGE </p>
         <h3>Detalhe da viagem:</h3>
-          <p> Nome: </p>
-          {/* <EstiloImagem src={profile.photo} alt={profile.photo} /> */}
-          <br/>
+        {/* {trip.name && <h1>{trip.name}</h1>} */}
+        {/* <p> Nome: {trip.name}</p> */}
+        <br/>
           {/* <EstiloDivBio>{profile.bio}</EstiloDivBio> */}
     </div>
   );

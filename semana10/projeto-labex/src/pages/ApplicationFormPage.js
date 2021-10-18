@@ -1,8 +1,8 @@
-import { useState } from "react";
+import React from "react";
 import { useHistory } from "react-router-dom";
 
 export const ApplicationFormPage = (props) => {
-  const [tripName, setTripName] = useState([])
+  // const [tripName, setTripName] = useState([])
     const history = useHistory ()
     const goBack = () => {
         history.goBack()
