@@ -15,14 +15,15 @@ margin-left: 40px;
 text-transform: capitalize
 `
 
-const CardPost = () => {
+const CardPost = (props) => {
 
     
   return (
     <div>
-        <h2>Meu feed:</h2>
+        {/* <h2>Meu feed:</h2> */}
         <ContainerCard>
-            <p>OI, EU SOU UM POST FOFiNHO</p>
+          <h3>{props.username}</h3>
+          <p>{props.title}</p>
         </ContainerCard>
     </div>
   );
