@@ -1,21 +1,18 @@
 import React from 'react'
-import { BrowserRouter, Switch, Route } from 'react-router-dom'
+import { Switch, Route } from 'react-router-dom'
 import {LoginPage} from '../pages/LoginPage/LoginPage'
 import SignUpPage from '../pages/SignUpPage/SignUpPage';
 import FeedPage from '../pages/FeedPage/FeedPage'
 import PostPage from '../pages/PostPage/PostPage'
-import Header from '../components/Header/Header'
 
-const Router = () => {
+const Router = ({setLoginButton}) => {
     return(
-        <BrowserRouter>
-            <Header/>
             <Switch>
                 <Route exact path = '/'>
-                    <LoginPage/>
+                    <LoginPage setLoginButton={setLoginButton}/>
                 </Route>
                 <Route exact path = '/signup'>
-                    <SignUpPage/>
+                    <SignUpPage setLoginButton={setLoginButton}/>
                 </Route>
                 <Route exact path = '/feed'>
                     <FeedPage/>
@@ -27,7 +24,6 @@ const Router = () => {
                     <div>Página não encontrada</div>
                 </Route>
             </Switch>
-        </BrowserRouter>
     )
 }
 

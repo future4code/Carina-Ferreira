@@ -1,6 +1,7 @@
 import React from "react";
 import styled from 'styled-components'
 import CardPost from '../../components/CardPost/CardPost'
+import useProtectedPage from "../../hooks/useProtectedPage";
 
 const ContainerCard=styled.div`
 display: flex;
@@ -19,6 +20,7 @@ text-transform: capitalize
 `
 
 const FeedPage = () => {
+  useProtectedPage()
 
   return (
     <div>

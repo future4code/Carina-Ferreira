@@ -1,49 +1,64 @@
-import { useState } from "react";
+import TextField from "@material-ui/core/TextField";
+import useForm from '../../hooks/useForm';
+import { goToFeed } from '../../routes/coordinator';
 import { useHistory } from "react-router-dom";
+import React from 'react';
+import { BASE_URL } from '../../constants/urls'
+import axios from 'axios'
+import useUnprotectedPage from "../../hooks/useUnprotectedPage";
 
-const SignUpPage = () => {
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState ('');
-    const [name, setName] = useState ('');
+const SignUpPage = ({setLoginButton}) => {
+  useUnprotectedPage()
+    const [form, onChange, clear] = useForm({username:"", email:"", password: ""});
   
-    // const history = useHistory ()
-  
-    const onChangeName = (event) => {
-        setName(event.target.value)
-        console.log(event.target.value)
-      }
+    const history = useHistory ()
 
-    const onChangeEmail = (event) => {
-      setEmail(event.target.value)
-      console.log(event.target.value)
-    }
-  
-    const onChangePassword = (event) => {
-      setPassword(event.target.value)
-      console.log(event.target.value)
+    const onSubmitForm = (event) => {
+      event.preventDefault()
+      signUp(form, clear, history, setLoginButton)
     }
 
-    
+    const signUp = (form, clear, history, setLoginButton) => {
+      axios.post(`${BASE_URL}/users/signup`, form)
+      .then((res) => {
+        localStorage.setItem("token", res.data.token)
+        clear()
+        goToFeed(history)
+        setLoginButton("Logout")
+      })
+      .catch((err) => alert(err.response.data.message))
+    }
+  
+
   return (
     <div>
         <h2>SIGN UP</h2>
-        <input
-        placeholder = 'Name'
-        value = {name}
-        onChange = {onChangeName}
-        />
-        <input
-        placeholder = 'Email'
-        value = {email}
-        onChange = {onChangeEmail}
-        />
-        <input
-        placeholder = 'Senha'
-        value = {password}
-        onChange = {onChangePassword}
-        />
+        <form onSubmit={onSubmitForm}>
+          <TextField
+            placeholder = 'Username'
+            name={"username"}
+            value = {form.username}
+            onChange = {onChange}
+            type={"username"}
+          />
+          <TextField
+            placeholder = 'Email'
+            name={"email"}
+            value = {form.email}
+            onChange = {onChange}
+            type={"email"}
+          />
+          <TextField
+            placeholder = 'Password'
+            name={"password"}
+            value = {form.password}
+            onChange = {onChange}
+            type={"password"}
+          />
+          <button type={"submit"}> BOTÃO CADASTRAR</button>
+        </form>
         <br/>
-        <button> BOTÃO CADASTRAR</button>
+        {/* <button> BOTÃO CADASTRAR</button> */}
     </div>
   );
 }
