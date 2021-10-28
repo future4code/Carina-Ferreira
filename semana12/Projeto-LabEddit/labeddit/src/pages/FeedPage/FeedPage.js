@@ -3,7 +3,9 @@ import styled from 'styled-components';
 import CardPost from '../../components/CardPost/CardPost';
 import useProtectedPage from "../../hooks/useProtectedPage";
 import useRequestData from '../../hooks/useRequestData';
-import {BASE_URL} from '../../constants/urls'
+import {BASE_URL} from '../../constants/urls';
+import useForm from '../../hooks/useForm';
+import axios from 'axios'
 
 const ContainerCard=styled.div`
 display: flex;
@@ -24,27 +26,42 @@ text-transform: capitalize
 const FeedPage = () => {
   useProtectedPage()
 
-  // const [form, onChange, clear] = useForm({email:"", password: ""});
-  // const history = useHistory ()
-
+  const [form, onChange, clear] = useForm({title:"", body: ""});
 
   
-  // const onSubmitForm = (event) => {
-  //   event.preventDefault()
-  //   login(form, clear, history, setLoginButton)
-  // }
+  const onSubmitForm = (event) => {
+    event.preventDefault()
+    // (form, clear, history)
+    console.log(form)
+    createPost()
+  }
 
   const posts = useRequestData([], `${BASE_URL}/posts`)
   console.log(posts)
 
+  const createPost = () => {
+    axios.post(`${BASE_URL}/posts`, form, {
+      headers: {
+        Authorization: localStorage.getItem("token")
+      }
+    })
+    .then((res) => {
+      alert(res.data.message)
+      clear()
+    })
+    .catch((err) => alert(err.response.message))
+  }
+
   const postCards = posts.map((post) => { 
     return (
-      <CardPost 
+      <CardPost
         key={post.id}
         username={post.username}
         title= {post.title}
-        onClick={() => null}
+        body={post.body}
+        // onClick={() => null}
       />
+
     )
   })
 
@@ -52,13 +69,26 @@ const FeedPage = () => {
     <div>
         <h2>MEU FEED</h2>
         <ContainerCard>
-        <input
-        placeholder = 'Escreva seu post aqui!'
-        value = ''
-        // onChange = {onChangeName}
-        />
-        <br/>
-        <button> POSTAR </button>
+          <form onSubmit={onSubmitForm}>
+            <input
+              placeholder = 'Título'
+              value = {form.title}
+              name = {"title"}
+              onChange={onChange}
+              type={"title"}
+            // onChange = {onChangeName}
+            />
+             <input
+              placeholder = 'Escreva seu post aqui!'
+              value = {form.body}
+              name = {"body"}
+              onChange={onChange}
+              type={"text"}
+            // onChange = {onChangeName}
+            />
+            <br/>
+            <button> POSTAR </button>
+          </form>
         </ContainerCard>
         {/* <CardPost/> */}
         {postCards}
