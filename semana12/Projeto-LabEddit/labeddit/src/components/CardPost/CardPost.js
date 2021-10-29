@@ -3,8 +3,9 @@ import styled from 'styled-components'
 // import { useHistory } from "react-router";
 // import { goToPost } from "../../routes/coordinator";
 // import AddCircleIcon from '@mui/icons-material/AddCircle';
-// import { useParams } from 'react-router-dom'
-// import { BASE_URL } from '../../constants/urls'
+import { useParams } from 'react-router-dom'
+import { BASE_URL } from '../../constants/urls'
+import axios from 'axios'
 // import useRequestData from '../../hooks/useRequestData';
 
 const ContainerCard=styled.div`
@@ -28,15 +29,18 @@ justify-content: space-between;
 `
 
 const CardPost = (props) => {
-  // const history = useHistory ()
-  // const params = useParams();
+  // const params = useParams()
 
-  // const comments = useRequestData({},`${BASE_URL}/posts/${params.id}/comments`)
-  // console.log("Oi, eu sou o comments",comments)
-
-  // const onClickPost = () => {
-  //   goToPost(history)
-  //   console.log(onClickPost)
+  // const createPostVote = () => {
+  //   axios.post(`${BASE_URL}/posts/${params.id}/votes`, {
+  //     body: {
+  //       direction: 1
+  //     }
+  //   })
+  //   .then((res) => {
+  //     console.log(res.data.message)
+  //   })
+  //   .catch((err) => console.log(err.response.message))
   // }
 
   return (
@@ -47,14 +51,15 @@ const CardPost = (props) => {
           <h3>{props.username}</h3>
           <p>{props.title}</p>
           <p>{props.body}</p>
-          <EstiloFooterCard>
-            <div>
-              <button> 🔼 </button>
-              0 
-              <button> 🔽 </button>
-            </div>
-            <div>Comentários</div>
-          </EstiloFooterCard>
+          {/* <p>{props.voteCount}</p> */}
+        <EstiloFooterCard>
+          <div>
+            <button> 🔼 </button>
+            <span>{props.voteCount}</span>
+            <button> 🔽 </button>
+          </div>
+          <span>{props.commentCount}Comentários</span>
+        </EstiloFooterCard>
           
         </ContainerCard>
     </div>

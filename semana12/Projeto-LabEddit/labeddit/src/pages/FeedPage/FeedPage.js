@@ -59,6 +59,7 @@ const FeedPage = () => {
     .catch((err) => alert(err.response.message))
   }
 
+
   const postCards = posts.map((post) => { 
     return (
       <CardPost
@@ -67,6 +68,8 @@ const FeedPage = () => {
         title= {post.title}
         body={post.body}
         onClick={() =>onClickDetailPost(post.id)}
+        voteCount={post.voteSum}
+        commentCount={post.commentCount}
       />
 
     )
