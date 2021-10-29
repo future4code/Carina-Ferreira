@@ -5,7 +5,9 @@ import useProtectedPage from "../../hooks/useProtectedPage";
 import useRequestData from '../../hooks/useRequestData';
 import {BASE_URL} from '../../constants/urls';
 import useForm from '../../hooks/useForm';
-import axios from 'axios'
+import axios from 'axios';
+import { goToPost } from "../../routes/coordinator";
+import { useHistory } from "react-router";
 
 const ContainerCard=styled.div`
 display: flex;
@@ -25,18 +27,23 @@ text-transform: capitalize
 
 const FeedPage = () => {
   useProtectedPage()
+  const history = useHistory ()
 
   const [form, onChange, clear] = useForm({title:"", body: ""});
 
   
   const onSubmitForm = (event) => {
     event.preventDefault()
-    // (form, clear, history)
     console.log(form)
     createPost()
   }
 
-  const posts = useRequestData([], `${BASE_URL}/posts`)
+  
+  const onClickDetailPost = (id) => {
+    goToPost(history, id)
+  }
+
+  const posts = useRequestData([], `${BASE_URL}/posts`)[0]
   console.log(posts)
 
   const createPost = () => {
@@ -59,7 +66,7 @@ const FeedPage = () => {
         username={post.username}
         title= {post.title}
         body={post.body}
-        // onClick={() => null}
+        onClick={() =>onClickDetailPost(post.id)}
       />
 
     )
