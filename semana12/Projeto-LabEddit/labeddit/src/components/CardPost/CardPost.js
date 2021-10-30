@@ -6,7 +6,7 @@ import styled from 'styled-components'
 import { useParams } from 'react-router-dom'
 import { BASE_URL } from '../../constants/urls'
 import axios from 'axios'
-// import useRequestData from '../../hooks/useRequestData';
+import useRequestData from '../../hooks/useRequestData';
 
 const ContainerCard=styled.div`
 display: flex;
@@ -17,10 +17,10 @@ width: 450px;
 height: 250px;
 margin: 16px;
 background-color: white;
-border-radius: 15px;
-margin-left: 40px;
+// border-radius: 15px;
+margin-left: 35vw;
 text-transform: capitalize;
-// cursor: pointer;
+cursor: pointer;
 `
 const EstiloFooterCard=styled.div`
 display: flex;
@@ -29,36 +29,39 @@ justify-content: space-between;
 `
 
 const CardPost = (props) => {
-  // const params = useParams()
+  const params = useParams()
 
-  // const createPostVote = () => {
-  //   axios.post(`${BASE_URL}/posts/${params.id}/votes`, {
-  //     body: {
-  //       direction: 1
-  //     }
-  //   })
-  //   .then((res) => {
-  //     console.log(res.data.message)
-  //   })
-  //   .catch((err) => console.log(err.response.message))
-  // }
+  const createPostVote = (id, direction) => {
+    const body = {
+      direction: 1
+    }
+
+    const headers = {
+      headers: {Authorization: localStorage.getItem ("token")}
+    }
+    
+    axios.post(`${BASE_URL}/posts/${params.id}/votes`, body, headers) 
+    .then((res) => {
+      console.log("oi,deu certoo o voteee",res)
+    })
+    .catch((err) => console.log(err))
+  }
 
   return (
     <div>
-        <ContainerCard>
+        <ContainerCard onClick={props.onClick}>
           <br/>
-          <button onClick={props.onClick}> ⏩ </button>
+          {/* <button> ⏩ </button> */}
           <h3>{props.username}</h3>
           <p>{props.title}</p>
           <p>{props.body}</p>
-          {/* <p>{props.voteCount}</p> */}
         <EstiloFooterCard>
           <div>
-            <button> 🔼 </button>
+            <button onClick={createPostVote()}> 🔼 </button>
             <span>{props.voteCount}</span>
             <button> 🔽 </button>
           </div>
-          <span>{props.commentCount}Comentários</span>
+          <span>{props.commentCount}Comments</span>
         </EstiloFooterCard>
           
         </ContainerCard>

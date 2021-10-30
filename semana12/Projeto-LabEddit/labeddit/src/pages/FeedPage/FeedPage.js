@@ -11,18 +11,18 @@ import { useHistory } from "react-router";
 
 const ContainerCard=styled.div`
 display: flex;
-flex-direction: column;
+// flex-direction: column;
 align-items: center;
 justify-content: center;
 border: 2px solid black;
-width: 250px;
+width: 450px;
 height: 130px;
 margin: 16px;
 background-color: white;
-border-radius: 15px;
-margin-left: 40px;
+// border-radius: 15px;
+margin-left: 35vw;
 margin-top: 20px;
-text-transform: capitalize
+text-transform: capitalize;
 `
 
 const FeedPage = () => {
@@ -77,7 +77,7 @@ const FeedPage = () => {
 
   return (
     <div>
-        <h2>MEU FEED</h2>
+        <h2>MY FEED</h2>
         <ContainerCard>
           <form onSubmit={onSubmitForm}>
             <input

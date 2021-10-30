@@ -4,13 +4,14 @@ import { goToLogin, goToFeed } from "../../routes/coordinator";
 import { useHistory } from "react-router";
 
 const EstiloHeader = styled.div`
-
-background-color: orange;
-height: 50px;
+margin:0px;
+background-color: #00bcd4;
+height: 90px;
 text-align: center;
 display: flex;
 justify-content: space-around;
 align-items: center;
+font-size: x-large;
 ` 
 
 const Header = ({loginButton,setLoginButton}) => {
