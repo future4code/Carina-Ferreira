@@ -6,6 +6,27 @@ import React from 'react';
 import axios from "axios";
 import { BASE_URL } from '../../constants/urls'
 import useUnprotectedPage from "../../hooks/useUnprotectedPage";
+import styled from "styled-components";
+
+const EstiloDivPrincipal=styled.div`
+height: 100vH;
+` 
+const EstiloForm = styled.form`
+display:flex;
+flex-direction: column;
+align-items: center;
+`
+const EstiloTitulo=styled.h2`
+margin:0;
+text-align: center;
+margin-bottom: 7vh;
+margin-top: 10vh;
+`
+const EstiloButton=styled.div`
+display:flex;
+justify-content:center;
+`
+
 
 export const LoginPage = ({setLoginButton}) => {
   useUnprotectedPage()
@@ -32,10 +53,10 @@ export const LoginPage = ({setLoginButton}) => {
 
 
   return (
-    <div>
-      <h2>LOGIN</h2>
+    <EstiloDivPrincipal>
+      <EstiloTitulo>LOGIN</EstiloTitulo>
       <div>
-        <form onSubmit={onSubmitForm}>
+        <EstiloForm onSubmit={onSubmitForm}>
           <TextField
               placeholder = 'Email'
               name={"email"}
@@ -43,24 +64,25 @@ export const LoginPage = ({setLoginButton}) => {
               onChange = {onChange}
               required
               type={"email"}
-              // fullWidth
           />
+          <br/>
           <TextField
-              placeholder = "Senha"
+              placeholder = "Password"
               name={"password"}
               value = {form.password}
               onChange = {onChange}
               required
               type={"password"}
-              // fullWidth
           />
-          
-          <button type={"submit"}> BOTÃO ENTRAR</button>
-        </form>
+          <br/>
+          <br/>
+          <button type={"submit"}> Sign In </button>
+        </EstiloForm>
       </div>
       <br/>
-      <button onClick={() => goToSignUpPage(history)}> BOTÃO CADASTRO </button>
-      <p> OI! EU SOU A LOGIN PAGE </p>
-    </div>
+      <EstiloButton>
+        <button onClick={() => goToSignUpPage(history)}> Don't have an account? Sign Up! </button>
+      </EstiloButton>
+    </EstiloDivPrincipal>
   );
 }; 

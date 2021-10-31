@@ -11,7 +11,6 @@ import { useHistory } from "react-router";
 
 const ContainerCard=styled.div`
 display: flex;
-// flex-direction: column;
 align-items: center;
 justify-content: center;
 border: 2px solid black;
@@ -19,10 +18,19 @@ width: 450px;
 height: 130px;
 margin: 16px;
 background-color: white;
-// border-radius: 15px;
 margin-left: 35vw;
 margin-top: 20px;
 text-transform: capitalize;
+`
+const EstiloDivPrincipal=styled.div`
+background-image: url("https://th.bing.com/th/id/R.f44bd6f284877acf607364d7b6c95675?rik=yYWlsThDpAwILw&pid=ImgRaw&r=0");
+background-attachment: fixed;
+` 
+
+const EstiloTitulo=styled.h2`
+margin:0;
+text-align: center;
+color: white;
 `
 
 const FeedPage = () => {
@@ -76,8 +84,8 @@ const FeedPage = () => {
   })
 
   return (
-    <div>
-        <h2>MY FEED</h2>
+    <EstiloDivPrincipal>
+        <EstiloTitulo>MY FEED</EstiloTitulo>
         <ContainerCard>
           <form onSubmit={onSubmitForm}>
             <input
@@ -97,12 +105,12 @@ const FeedPage = () => {
             // onChange = {onChangeName}
             />
             <br/>
-            <button> POSTAR </button>
+            <button> POST </button>
           </form>
         </ContainerCard>
         {/* <CardPost/> */}
         {postCards}
-    </div>
+    </EstiloDivPrincipal>
   );
 }
 

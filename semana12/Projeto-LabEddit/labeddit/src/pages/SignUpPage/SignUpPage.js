@@ -6,6 +6,24 @@ import React from 'react';
 import { BASE_URL } from '../../constants/urls'
 import axios from 'axios'
 import useUnprotectedPage from "../../hooks/useUnprotectedPage";
+import styled from 'styled-components'
+
+const EstiloDivPrincipal=styled.div`
+height: 100vH;
+` 
+const EstiloForm = styled.form`
+display:flex;
+flex-direction: column;
+align-items: center;
+`
+const EstiloTitulo=styled.h2`
+margin:0;
+text-align: center;
+margin-bottom: 8vh;
+margin-top: 10vh;
+`
+
+
 
 const SignUpPage = ({setLoginButton}) => {
   useUnprotectedPage()
@@ -31,9 +49,9 @@ const SignUpPage = ({setLoginButton}) => {
   
 
   return (
-    <div>
-        <h2>SIGN UP</h2>
-        <form onSubmit={onSubmitForm}>
+    <EstiloDivPrincipal>
+        <EstiloTitulo>SIGN UP</EstiloTitulo>
+        <EstiloForm onSubmit={onSubmitForm}>
           <TextField
             placeholder = 'Username'
             name={"username"}
@@ -41,6 +59,7 @@ const SignUpPage = ({setLoginButton}) => {
             onChange = {onChange}
             type={"username"}
           />
+          <br/>
           <TextField
             placeholder = 'Email'
             name={"email"}
@@ -48,6 +67,7 @@ const SignUpPage = ({setLoginButton}) => {
             onChange = {onChange}
             type={"email"}
           />
+          <br/>
           <TextField
             placeholder = 'Password'
             name={"password"}
@@ -55,11 +75,13 @@ const SignUpPage = ({setLoginButton}) => {
             onChange = {onChange}
             type={"password"}
           />
-          <button type={"submit"}> BOTÃO CADASTRAR</button>
-        </form>
+          <p> <i>*The password must be between 8 and 30 characters long </i> </p>
+          <br/>
+          <br/>
+          <button type={"submit"}> Sign Up </button>
+        </EstiloForm>
         <br/>
-        {/* <button> BOTÃO CADASTRAR</button> */}
-    </div>
+    </EstiloDivPrincipal>
   );
 }
 

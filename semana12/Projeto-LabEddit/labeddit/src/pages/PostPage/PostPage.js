@@ -20,10 +20,19 @@ width: 450px;
 height: 130px;
 margin: 35px;
 background-color: white;
-// border-radius: 15px;
 margin-left: 35vw;
 margin-top: 20px;
 text-transform: capitalize
+`
+const EstiloDivPrincipal=styled.div`
+background-image: url("https://th.bing.com/th/id/R.f44bd6f284877acf607364d7b6c95675?rik=yYWlsThDpAwILw&pid=ImgRaw&r=0");
+background-attachment: fixed;
+` 
+
+const EstiloTitulo=styled.h2`
+margin:0;
+text-align: center;
+color: white;
 `
 
 const PostPage = (props) => {
@@ -89,8 +98,8 @@ const PostPage = (props) => {
 
   
   return (
-    <div>
-        {/* <h1>POST:</h1> */}
+    <EstiloDivPrincipal>
+        <EstiloTitulo>POST:</EstiloTitulo>
         {getDetail}
         <ContainerCard onSubmit={onSubmitForm}>
           <input
@@ -100,12 +109,12 @@ const PostPage = (props) => {
               onChange = {onChange}
               type={"body"}
           />
-          {/* <h2>COMMENTS:</h2> */}
           <br/>
           <button type={"submit"}> Add comment</button>
         </ContainerCard>
+        <EstiloTitulo> COMMENTS:</EstiloTitulo>
         {getComments}
-    </div>
+    </EstiloDivPrincipal>
   );
 }
 

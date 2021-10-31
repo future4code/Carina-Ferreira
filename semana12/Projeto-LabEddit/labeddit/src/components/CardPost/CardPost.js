@@ -3,10 +3,10 @@ import styled from 'styled-components'
 // import { useHistory } from "react-router";
 // import { goToPost } from "../../routes/coordinator";
 // import AddCircleIcon from '@mui/icons-material/AddCircle';
-import { useParams } from 'react-router-dom'
-import { BASE_URL } from '../../constants/urls'
-import axios from 'axios'
-import useRequestData from '../../hooks/useRequestData';
+// import { useParams } from 'react-router-dom'
+// import { BASE_URL } from '../../constants/urls'
+// import axios from 'axios'
+// import useRequestData from '../../hooks/useRequestData';
 
 const ContainerCard=styled.div`
 display: flex;
@@ -29,23 +29,23 @@ justify-content: space-between;
 `
 
 const CardPost = (props) => {
-  const params = useParams()
+  // const params = useParams()
 
-  const createPostVote = (id, direction) => {
-    const body = {
-      direction: 1
-    }
+  // const createPostVote = (id, direction) => {
+  //   const body = {
+  //     direction: 1
+  //   }
 
-    const headers = {
-      headers: {Authorization: localStorage.getItem ("token")}
-    }
+  //   const headers = {
+  //     headers: {Authorization: localStorage.getItem ("token")}
+  //   }
     
-    axios.post(`${BASE_URL}/posts/${params.id}/votes`, body, headers) 
-    .then((res) => {
-      console.log("oi,deu certoo o voteee",res)
-    })
-    .catch((err) => console.log(err))
-  }
+  //   axios.post(`${BASE_URL}/posts/${params.id}/votes`, body, headers) 
+  //   .then((res) => {
+  //     console.log("oi,deu certoo o voteee",res)
+  //   })
+  //   .catch((err) => console.log(err))
+  // }
 
   return (
     <div>
@@ -57,7 +57,7 @@ const CardPost = (props) => {
           <p>{props.body}</p>
         <EstiloFooterCard>
           <div>
-            <button onClick={createPostVote()}> 🔼 </button>
+            <button> 🔼 </button>
             <span>{props.voteCount}</span>
             <button> 🔽 </button>
           </div>
