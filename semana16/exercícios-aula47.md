@@ -55,18 +55,62 @@ const avgSalary = async (gender: string): Promise<any> => {
 #### Exercício 3)
 `a.`
 ```
-RESPOSTA AQUI
+app.get("/actor/:id", async (req, res) => {
+    try {
+      const id = req.params.id;
+      const resultado = await connection.raw(`
+            SELECT * FROM Actor
+            WHERE id = "${id}"
+        `)
+    res.status(200).send(resultado[0]);
+  } catch(error){
+    res.status(500).send(error.sqlMessage || error.message)
+    }
+  });
 ```
 `b.`
 ```
+app.get("/actor", async (req, res) => {
+  try {
+    const gender = req.query.gender;
+    const resultado = await connection.raw(`
+          SELECT COUNT (*) FROM Actor
+          WHERE gender = "${gender}"
+      `)
+  res.status(200).send(resultado[0]);
+} catch(error){
+  res.status(500).send(error.sqlMessage || error.message)
+  }
+});
 ```
 
 #### Exercício 4)
 `a.`
 ```
-RESPOSTA AQUI
+app.put("/actor/:id", async (req, res) => {
+  try {
+    await connection("Actor")
+      .update({
+        salary: req.body.salary,
+      })
+      .where({ id: req.params.id });
+
+    res.status(200).send("Ator foi atualizado!");
+  } catch (error) {
+    res.status(500).send(error.sqlMessage || error.message);
+  }
+});
 ```
 `b.`
 ```
+app.delete("/actor/:id", async (req, res) => {
+    try {
+      await connection("Actor").delete().where({ id: req.params.id });
+  
+      res.status(200).send("O Ator foi deletado!");
+    } catch (error) {
+      res.status(500).send(error.sqlMessage || error.message);
+    }
+  });
 ```
 
