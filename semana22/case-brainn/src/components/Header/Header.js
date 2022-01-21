@@ -1,0 +1,61 @@
+import {EstiloHeader, EstiloLogo, EstiloPainel, EstiloTexto, EstiloBotao} from './styled';
+import Logo from '../../img/logo.png'
+// import { goToLogin, goToFeed } from "../../routes/coordinator";
+// import { useHistory } from "react-router";
+
+
+
+const Header = () => {
+    // const history = useHistory ()
+    // const token = localStorage.getItem("token")
+    // const [loginEstiloBotao, setLoginEstiloBotao] = useState(token? "Logout" : "Login")
+
+    // const logout = () => {
+    //   localStorage.removeItem("token")
+    // }
+  
+    // const loginEstiloBotaoAction = () =>{
+    //   if (token){
+    //     logout()
+    //     setLoginEstiloBotao("Login")
+    //     goToLogin(history)
+    //   }else{
+    //     goToLogin(history)
+    //   }
+    // }
+  return (
+    <div>
+        <EstiloHeader>
+            <EstiloLogo src = {Logo}/>
+        </EstiloHeader>
+
+        <EstiloPainel> 
+            <EstiloTexto> Milhões de filmes, séries e pessoas para descobrir. Explore já.</EstiloTexto>
+            <div>
+                <EstiloBotao>Ação</EstiloBotao>
+                <EstiloBotao>Aventura</EstiloBotao>
+                <EstiloBotao>Animação</EstiloBotao>
+                <EstiloBotao>Comédia</EstiloBotao>
+                <EstiloBotao>Crime</EstiloBotao>
+                <EstiloBotao>Documentário</EstiloBotao>
+                <EstiloBotao>Drama</EstiloBotao>
+                <EstiloBotao>Família</EstiloBotao>
+                <EstiloBotao>Fantasia</EstiloBotao>
+                <EstiloBotao>História</EstiloBotao>
+                <EstiloBotao>Terror</EstiloBotao>
+                <EstiloBotao>Música</EstiloBotao>
+                <EstiloBotao>Mistério</EstiloBotao>
+                <EstiloBotao>Romance</EstiloBotao>
+                <EstiloBotao>Ficção científica</EstiloBotao>
+                <EstiloBotao>Cinema TV</EstiloBotao>
+                <EstiloBotao>Thriller</EstiloBotao>
+                <EstiloBotao>Guerra</EstiloBotao>
+                <EstiloBotao>Faroeste</EstiloBotao>
+            </div>
+
+        </EstiloPainel>
+    </div>
+  );
+}
+
+export default Header;
