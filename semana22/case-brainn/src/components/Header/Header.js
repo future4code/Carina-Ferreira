@@ -1,4 +1,4 @@
-import {EstiloHeader, EstiloLogo, EstiloPainel, EstiloTexto, EstiloBotao} from './styled';
+import {EstiloHeader, EstiloLogo, EstiloPainel, EstiloTexto, EstiloBotao, TesteDiv, TextoFiltro} from './styled';
 import Logo from '../../img/logo.png'
 // import { goToLogin, goToFeed } from "../../routes/coordinator";
 // import { useHistory } from "react-router";
@@ -31,7 +31,8 @@ const Header = () => {
 
         <EstiloPainel> 
             <EstiloTexto> Milhões de filmes, séries e pessoas para descobrir. Explore já.</EstiloTexto>
-            <div>
+            <TextoFiltro>FILTRE POR:</TextoFiltro>
+            <TesteDiv>
                 <EstiloBotao>Ação</EstiloBotao>
                 <EstiloBotao>Aventura</EstiloBotao>
                 <EstiloBotao>Animação</EstiloBotao>
@@ -42,6 +43,7 @@ const Header = () => {
                 <EstiloBotao>Família</EstiloBotao>
                 <EstiloBotao>Fantasia</EstiloBotao>
                 <EstiloBotao>História</EstiloBotao>
+                <br/>
                 <EstiloBotao>Terror</EstiloBotao>
                 <EstiloBotao>Música</EstiloBotao>
                 <EstiloBotao>Mistério</EstiloBotao>
@@ -51,7 +53,7 @@ const Header = () => {
                 <EstiloBotao>Thriller</EstiloBotao>
                 <EstiloBotao>Guerra</EstiloBotao>
                 <EstiloBotao>Faroeste</EstiloBotao>
-            </div>
+            </TesteDiv>
 
         </EstiloPainel>
     </div>
