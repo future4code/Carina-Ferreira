@@ -16,6 +16,7 @@ left: 10vW;
 right: 0%;
 top: 2vH;
 bottom: 1vH;
+cursor: pointer;
 `
 export const EstiloPainel = styled.div`
 position: absolute;

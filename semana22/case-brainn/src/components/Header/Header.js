@@ -6,23 +6,7 @@ import Logo from '../../img/logo.png'
 
 
 const Header = () => {
-    // const history = useHistory ()
-    // const token = localStorage.getItem("token")
-    // const [loginEstiloBotao, setLoginEstiloBotao] = useState(token? "Logout" : "Login")
 
-    // const logout = () => {
-    //   localStorage.removeItem("token")
-    // }
-  
-    // const loginEstiloBotaoAction = () =>{
-    //   if (token){
-    //     logout()
-    //     setLoginEstiloBotao("Login")
-    //     goToLogin(history)
-    //   }else{
-    //     goToLogin(history)
-    //   }
-    // }
   return (
     <div>
         <EstiloHeader>

@@ -1,13 +1,11 @@
-import react from 'react'
-import Header from './components/Header/Header'
-import HomePage from './pages/HomePage/HomePage';
+import React from 'react'
+import Router from './routes/Router';
 
 const App = () => {
 
   return (
     <div>
-      <Header/>
-      <HomePage/>
+      <Router/>
     </div>
   );
 }

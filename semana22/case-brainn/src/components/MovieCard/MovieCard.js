@@ -1,10 +1,13 @@
 import React from 'react';
+import {CardContainer} from './styled'
 
 const MovieCard = (props) => {
     return (
-        <div>
+        <CardContainer onClick={props.onClick}>
+           <img src= {props.poster}/>
            <p>{props.title}</p>
-        </div>
+           <p>{props.date}</p>
+        </CardContainer>
       );
     }
     
