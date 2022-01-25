@@ -6,14 +6,14 @@ import { API_KEY } from "../../constants/api_key";
 import {IMG} from '../../constants/urls'
 import MovieCard from "../../components/MovieCard/MovieCard";
 import Header from "../../components/Header/Header";
-import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
+import { useHistory } from "react-router-dom";
 import { goToMovieDetails } from "../../routes/coordinator";
 
 
 const HomePage = () => {
     const history = useHistory()
 
-    const movies = useRequestData([], `${BASE_URL}/movie/popular${API_KEY}`)[0]
+    const movies = useRequestData([], `${BASE_URL}/movie/popular?api_key=${API_KEY}`, "results")[0]
 
     const onClickCard = (id) =>{
       goToMovieDetails(history, id)
@@ -42,7 +42,7 @@ const HomePage = () => {
           <Header/>
         </EstiloHeader>
 
-        <Body onClick={onClickCard}> {movieCards} </Body>
+        <Body> {movieCards} </Body>
 
         <div>
           <button>1</button>
