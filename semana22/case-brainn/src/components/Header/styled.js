@@ -28,23 +28,14 @@ background: #2D0C5E;
 `
 
 export const EstiloBotao = styled.button`
-// display: flex;
-// flex-direction: row;
-justify-content: center;
-align-items: center;
-padding: 8px 16px;
 cursor: pointer;
-
-// position: absolute;
 width: 7vw;
 height: 40px;
 left: 202px;
 margin-top: 1vH;
 text-align: center;
 margin-left: 1vw;
-
-/* Neutral Colors / Gray / Gray 000 */
-
+font-weight: bold;
 background: #FFFFFF;
 border-radius: 4px;
 
@@ -54,39 +45,32 @@ export const EstiloTexto = styled.p`
 font-size: 4vW;
 color: white;
 position: absolute;
-width: 60vW;
+width: 65vW;
 height: 10vH;
 margin-left: 25vw;
 margin-top: 10vh;
 background-color:  #2D0C5E;
-font-family: Roboto;
+font-family: -webkit-pictograph;
 font-style: normal;
 font-weight: bold;
-// font-size: 4vw;
 line-height: 56px;
 letter-spacing: -0.005em;
 `
 
 export const TesteDiv = styled.div`
-// width: 30vw;
-// height: 10vH;
-// display: flex;
 margin-top: 40vH;
 margin-left: 10vW;
 `
 
 export const TextoFiltro = styled.p`
 position: absolute;
-width: 50vW;
 height: 20vH;
 left: 50vW;
 margin-top: 34vH;
-
-font-family: Roboto;
+font-family: -webkit-pictograph;
 font-style: normal;
 font-weight: bold;
 font-size: 14px;
 line-height: 20px;
-
 color: #FFFFFF;
 `

@@ -1,5 +1,5 @@
-export const goBack = (history) => {
-    history.goBack()
+export const goHome = (history) => {
+    history.push(`/`)
 }
 
 export const goToMovieDetails = (history, id) =>{

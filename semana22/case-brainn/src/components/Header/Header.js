@@ -1,16 +1,22 @@
 import {EstiloHeader, EstiloLogo, EstiloPainel, EstiloTexto, EstiloBotao, TesteDiv, TextoFiltro} from './styled';
 import Logo from '../../img/logo.png'
-// import { goToLogin, goToFeed } from "../../routes/coordinator";
-// import { useHistory } from "react-router";
+import { goHome } from "../../routes/coordinator";
+import { useHistory } from "react-router";
 
 
 
 const Header = () => {
 
+  const history = useHistory()
+
+  const onClickLogo = () =>{
+    goHome(history)
+  }
+
   return (
     <div>
         <EstiloHeader>
-            <EstiloLogo src = {Logo}/>
+            <EstiloLogo src = {Logo}  onClick={() => onClickLogo()}/>
         </EstiloHeader>
 
         <EstiloPainel> 

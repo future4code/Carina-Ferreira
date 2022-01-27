@@ -1,11 +1,12 @@
 import React from 'react'
 import Logo from '../../img/logo.png'
-import {EstiloLogo, EstiloHeader, EstiloPainel, ScrollCast, EstiloIMG, EstiloIMGTrailer, Título, H2, H1, H3, P, Body} from './styled';
+import Ellipse from '../../img/Ellipse.png'
+import {EstiloLogo, EstiloHeader, EstiloPainel, ScrollCast, EstiloIMG, EstiloIMGTrailer, Título, H2, H1, H3, P, Body, H33, H3S} from './styled';
 import useRequestData from '../../hooks/useRequestData';
 import { BASE_URL, IMG_details } from '../../constants/urls';
 import { API_KEY } from '../../constants/api_key';
 import { useParams } from 'react-router-dom';
-import { goBack, goToMovieDetails } from '../../routes/coordinator';
+import { goHome, goToMovieDetails } from '../../routes/coordinator';
 import { useHistory } from "react-router-dom";
 import MovieCastCard from '../../components/MovieCastCard/MovieCastCard';
 import MovieCard from '../../components/MovieCard/MovieCard';
@@ -20,7 +21,7 @@ const DetailsPage = () => {
     }
 
     const onClickLogo = () =>{
-      goBack(history)
+      goHome(history)
     }
 
 
@@ -32,12 +33,9 @@ const DetailsPage = () => {
     const moviesCredits = useRequestData([], `${BASE_URL}/movie/${movie_id}/credits?api_key=${API_KEY}&language=pt-BR`, "cast")[0]
 
     const moviesRecommendations = useRequestData([], `${BASE_URL}/movie/${movie_id}/recommendations?api_key=${API_KEY}`, "results")[0]
-    console.log("Recomendações", moviesRecommendations)
-
-
     
 
-
+  
     const movieCastList = 
     moviesCredits && moviesCredits.map((movieCast) => { 
     return (
@@ -76,15 +74,18 @@ const DetailsPage = () => {
             <div>
               <H1>{moviesDetail.original_title}({moviesDetail.release_date})</H1>
               <br/>
-              <H3>{moviesDetail.vote_average} Avaliação dos usuários</H3>
-              <H3>Sinopse:</H3>
+              <H3>{moviesDetail.vote_average}</H3>
+              <img src = {Ellipse}></img>
+              <H33>Avaliação</H33>
+    
+              <H3S>Sinopse:</H3S>
               <P>{moviesDetail.overview}</P>
 
             </div>
         </EstiloPainel>
-    
+
         <H2>Elenco original</H2>
-        
+        <br/>
         <ScrollCast>{movieCastList}</ScrollCast>
         <Título>Trailer</Título>
         <EstiloIMGTrailer src= {IMG_trailer + moviesDetail.backdrop_path}/>
