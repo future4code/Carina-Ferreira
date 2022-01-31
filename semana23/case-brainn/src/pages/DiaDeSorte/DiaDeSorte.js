@@ -1,16 +1,16 @@
-import React from 'react';
-import { PageContainer, SideBar, WhiteBar, Logo, Title, Text, Numbers, TextStyle } from './styled';
+import React from 'react'
+import { PageContainer, SideBar, WhiteBar, Logo, Title, Text, Numbers, TextStyle } from './styled'
 import Select from '../../components/Select/Select';
 import Icon from '../../img/iconn.png';
-import useRequestData from '../../hooks/useRequestData'
+import useRequestData from '../../hooks/useRequestData';
 import { BASE_URL } from '../../constants/urls';
 
-const MegaSena = () => {
+const DiaDeSorte = () => {
 
-  // const movies = useRequestData([], `${BASE_URL}/movie/popular?api_key=${API_KEY}&page=${offset + 1}`, "results")[0]
+  
+  const list = useRequestData([] `${BASE_URL}/loterias`)[0]
+  console.log(list)
 
-  // const list = useRequestData({} `${BASE_URL}/loterias`)
-  // console.log(list)
 
   return (
     <PageContainer>
@@ -18,7 +18,7 @@ const MegaSena = () => {
         <Select/>
         <Title>
           <Logo src={Icon}/>
-          MEGA-SENA
+          DIA DE SORTE
         </Title>
 
         <Text>
@@ -36,4 +36,4 @@ const MegaSena = () => {
   );
 }
 
-export default MegaSena;
+export default DiaDeSorte;

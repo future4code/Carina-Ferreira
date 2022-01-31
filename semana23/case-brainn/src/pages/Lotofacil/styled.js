@@ -8,7 +8,7 @@ justify-content: space-around;
 align-items: center;
 width: 30vW;
 height: 100vH;
-background: #6BEFA3;
+background: #DD7AC6;
 `
 
 
@@ -29,7 +29,7 @@ display: grid;
 grid-template-columns: auto auto;
 width: 100vW;
 height: 100vH;
-background: #6BEFA3;
+background: #DD7AC6;
 `
 
 export const Logo = styled.img`
