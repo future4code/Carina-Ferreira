@@ -67,7 +67,7 @@ border-radius: 10vW;
 display: flex;
 align-items: center;
 justify-content: center;
-font-size: x-large;
+font-size: xxx-large;
 font-family: -webkit-pictograph;
 background-color: white;
 margin-bottom: 34vH;

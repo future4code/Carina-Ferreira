@@ -30,6 +30,8 @@ grid-template-columns: auto auto;
 width: 100vW;
 height: 100vH;
 background: #6BEFA3;
+margin: 0px;
+padding: 0px;
 `
 
 export const Logo = styled.img`
@@ -52,6 +54,15 @@ font-size: medium;
 font-family: -webkit-pictograph;
 color: white;
 `
+export const Mark = styled.p`
+display: flex;
+// width: 4vW;
+// height: 6vH;
+color:#6BEFA3;
+// margin-left: 20vW;
+margin-bottom: 50vH;
+`
+
 export const TextStyle = styled.p`
 font-size: small;
 font-family: -webkit-pictograph;
@@ -59,16 +70,15 @@ margin-bottom: 8vH;
 text-align: center;
 margin-left: 5vW;
 `
-
-export const Numbers = styled.p`
-width: 7vW;
-height: 15vH;
-border-radius: 10vW;
+export const NumberStyle = styled.p`
 display: flex;
 align-items: center;
 justify-content: center;
-font-size: x-large;
+font-size: xxx-large;
 font-family: -webkit-pictograph;
-background-color: white;
-margin-bottom: 34vH;
+// margin-bottom: 14vH;
+margin-top: 0vH;
+margin-left: 0vW;
+// position: absolute;
 `
+

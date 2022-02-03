@@ -60,7 +60,7 @@ text-align: center;
 margin-left: 5vW;
 `
 
-export const Numbers = styled.p`
+export const NumbersStyle = styled.p`
 width: 7vW;
 height: 15vH;
 border-radius: 10vW;

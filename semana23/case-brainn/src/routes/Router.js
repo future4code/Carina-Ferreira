@@ -1,6 +1,7 @@
 import React from 'react';
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
 import DiaDeSorte from '../pages/DiaDeSorte/DiaDeSorte';
+import HomePage from '../pages/HomePage/HomePage';
 import Lotofacil from '../pages/Lotofacil/Lotofacil';
 import Lotomania from '../pages/Lotomania/Lotomania';
 import MegaSena from '../pages/MegaSena/MegaSena'
@@ -13,7 +14,9 @@ const Router = () =>{
         <BrowserRouter>
             <Routes>
 
-                <Route path="/" element={<MegaSena/>}/>
+                <Route path="/" element={<HomePage/>}/>
+
+                <Route path="/Megasena" element={<MegaSena/>}/>
 
                 <Route path="/Dia-de-sorte" element={<DiaDeSorte/>}/>
 

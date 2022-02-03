@@ -1,9 +1,34 @@
 import React from 'react'
-import { PageContainer, SideBar, WhiteBar, Logo, Title, Text, Numbers, TextStyle } from './styled'
+import { PageContainer, SideBar, WhiteBar, Logo, Title, Text, TextStyle } from './styled'
 import Select from '../../components/Select/Select';
 import Icon from '../../img/iconn.png'
+import useRequestData from '../../hooks/useRequestData';
+import { BASE_URL } from '../../constants/urls';
+import Numbers from '../../components/Numbers/Numbers';
+
 
 const Lotofacil = () => {
+  const id = "2200"
+
+  const list = useRequestData([],  `${BASE_URL}/loterias-concursos`)
+  console.log("OI, sou listaaa:", list)
+
+  const listById = useRequestData([list],  `${BASE_URL}/concursos/${id}`)
+  console.log("OI, sou a requisição:", listById)
+
+
+
+  const numberslistById = 
+  listById && listById.map((number) => { 
+ 
+  return (
+    <Numbers
+      key = {number.id}
+      numbers = {number.numeros}
+    />
+
+  )
+})
 
   return (
     <PageContainer>
@@ -21,7 +46,7 @@ const Lotofacil = () => {
       </SideBar>
 
       <WhiteBar>
-        <Numbers><strong>23</strong></Numbers>
+        <strong>{numberslistById}</strong>
         <TextStyle>Este sorteio é meramente ilustrativo e não possui nenhuma ligação com a CAIXA.</TextStyle>
       </WhiteBar>
 

@@ -1,16 +1,35 @@
 import React from 'react';
-import { PageContainer, SideBar, WhiteBar, Logo, Title, Text, Numbers, TextStyle } from './styled';
+import { PageContainer, SideBar, WhiteBar, Logo, Title, Text, TextStyle, Mark } from './styled';
 import Select from '../../components/Select/Select';
 import Icon from '../../img/iconn.png';
 import useRequestData from '../../hooks/useRequestData'
 import { BASE_URL } from '../../constants/urls';
+import Numbers from '../../components/Numbers/Numbers';
 
 const MegaSena = () => {
 
-  // const movies = useRequestData([], `${BASE_URL}/movie/popular?api_key=${API_KEY}&page=${offset + 1}`, "results")[0]
+  const id = "2359"
 
-  // const list = useRequestData({} `${BASE_URL}/loterias`)
-  // console.log(list)
+  const list = useRequestData([],  `${BASE_URL}/loterias-concursos`)
+  console.log("OI, sou listaaa:", list)
+
+  const listById = useRequestData([list],  `${BASE_URL}/concursos/${id}`)
+  console.log("OI, sou a requisição:", listById)
+
+
+
+  const numberslistById = 
+  listById && listById.map((number) => { 
+ 
+  return (
+    <Numbers
+      key = {number.id}
+      numbers = {number.numeros}
+    />
+
+  )
+})
+
 
   return (
     <PageContainer>
@@ -28,7 +47,7 @@ const MegaSena = () => {
       </SideBar>
 
       <WhiteBar>
-        <Numbers><strong>23</strong></Numbers>
+        <strong>{numberslistById}</strong>
         <TextStyle>Este sorteio é meramente ilustrativo e não possui nenhuma ligação com a CAIXA.</TextStyle>
       </WhiteBar>
 
